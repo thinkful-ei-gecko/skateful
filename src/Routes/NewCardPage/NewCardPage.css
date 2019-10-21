@@ -1,0 +1,33 @@
+fieldset {
+    width: 40%;
+    text-align: center;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 5px;
+    margin: 10px;
+}
+
+.submit {
+    background-color: teal;
+    font-weight: bold;
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(104, 112, 112);
+}
+
+textarea {
+    width: 80%;
+    height: 20%;
+}

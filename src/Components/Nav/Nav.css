@@ -1,0 +1,55 @@
+header {
+    display: flex;
+    /* background-color: rgba(78, 187, 61, 0.646); */
+    background-color: rgb(89, 143, 135);
+    justify-content: space-around;
+}
+
+.Skateful {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: larger;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+.Skateful:hover {
+    color: rgb(20, 11, 123);
+    font-weight: 600;
+}
+
+#logo {
+    margin-top: 10px;
+    margin-right: 3px; 
+}
+
+.nav-link{
+    justify-content: flex-end;
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+    margin: 8px;
+}
+
+.nav-link:hover {
+    color: lightgoldenrodyellow;
+}
+
+.Slogan {
+    margin-top: 21px;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+.Slogan:hover {
+    color: goldenrod;
+}
+
+@media only screen and (max-width: 600px) {
+    .Slogan {
+        display: none;
+    }
+}
