@@ -8,19 +8,24 @@ export default class NewCardPage extends React.Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    !this.context.logged_in ? window.alert('Must be logged in!') && this.context.renderLogIn() : this.context.doNothing()
-    const { name, location, instagram, bio, img_url } = ev.target
+    if (!this.context.logged_in) {
+      this.context.renderLogIn()
+      window.alert('Must be logged in!')
+    }
+    else if (this.context.logged_in) {
+      const { name, location, instagram, bio, img_url } = ev.target
 
-    SkaterAPIService.postSkater(name.value, location.value, instagram.value, bio.value, img_url.value)
-      .then(this.context.addSkater)
-      .then(() => {
-        this.refs.name.value = ''
-        this.refs.location.value = ''
-        this.refs.instagram.value = ''
-        this.refs.bio.value = ''
-        this.refs.img_url.value = ''
-        this.context.renderMainPage()
+      SkaterAPIService.postSkater(name.value, location.value, instagram.value, bio.value, img_url.value)
+        .then(this.context.addSkater)
+        .then(() => {
+          this.refs.name.value = ''
+          this.refs.location.value = ''
+          this.refs.instagram.value = ''
+          this.refs.bio.value = ''
+          this.refs.img_url.value = ''
+          this.context.renderMainPage()
       })
+    }
   }
 
   render() {

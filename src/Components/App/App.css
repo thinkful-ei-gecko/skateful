@@ -20,3 +20,34 @@
 .App-link {
   color: #09d3ac;
 }
+
+.body {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.footer {
+  display: flex;
+  background-color: rgb(89, 143, 135);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 85px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 9.999px;
+  margin-top: 15px;
+}
+
+.contact-links {
+  padding: 5px;
+}

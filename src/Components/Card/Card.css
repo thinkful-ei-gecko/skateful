@@ -8,6 +8,7 @@
     margin: 10px;
     padding: 15px;
     box-shadow: 2px 2px 2px;
+    overflow: auto;
 }
 
 .inner {
@@ -17,6 +18,7 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+
 }
 
 .Card:hover .inner {
@@ -48,4 +50,44 @@
 .Upvote {
     height: 25px;
     width: 100px;
+    cursor: pointer;
+}
+
+.Upvote:hover {
+    background-color: grey;
+}
+
+.delete {
+    height: 40px;
+    width: 40px;
+    float: right;
+    float: top;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.back-x {
+    display: none;
+}
+
+.delete:hover .front-x{
+    display: none;
+}
+
+.delete:hover .back-x {
+    display: block;
+}
+
+.view-comments {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    display: block;
+    margin: 5px;
+}
+
+.view-comments:hover {
+    background-color: lightgrey;
 }

@@ -26,18 +26,6 @@ const SkaterAPIService = {
             : res.json()
       )
   },
-  getArticle(articleId) {
-    return fetch(`${config.API_ENDPOINT}/articles/${articleId}`, {
-      headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
-  },
   getComments(skaterId) {
     return fetch(`${config.API_ENDPOINT}/skaters/${skaterId}/comments`, {
       headers: {
@@ -51,9 +39,10 @@ const SkaterAPIService = {
       )
   },
   postComment(skaterId, comment) {
-    return fetch(`${config.API_ENDPOINT}/comments`, {
+    return fetch(`${config.API_ENDPOINT}/skaters/${skaterId}/comments`, {
       method: 'POST',
       headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -100,6 +89,52 @@ const SkaterAPIService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+  },
+  deleteSkater(skaterId) {
+    return fetch(`${config.API_ENDPOINT}/skaters/${skaterId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
+      }    
+    })
+  }, 
+  deleteComment(skaterId, commentId) {
+    return fetch(`${config.API_ENDPOINT}/skaters/${skaterId}/comments/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
+      }
+    })   
+  },
+  editComment(skaterId, commentId, newComment) {
+    return fetch(`${config.API_ENDPOINT}/skaters/${skaterId}/comments/${commentId}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({comment: newComment})
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+  },
+  addVote(skaterId, newUpvoteCount){
+    return fetch(`${config.API_ENDPOINT}/skaters/${skaterId}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ up_votes: newUpvoteCount })
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res
+    )
   }
 }
 

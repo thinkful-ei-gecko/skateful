@@ -12,13 +12,17 @@
 
 .front-plus {
     width: 250px;
-    height: 325px;
+    height: 285px;
+    margin-top: 40px;
+    cursor: pointer;
 }
 
 .back-plus {
     display: none;
     width: 250px;
-    height: 325px;
+    height: 285px;
+    margin-top: 40px;
+    cursor: pointer;
 }
 
 .NewCard:hover .back-plus {

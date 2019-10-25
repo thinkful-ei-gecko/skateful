@@ -6,4 +6,19 @@
     box-shadow: 2px 2px 2px;
     justify-content: center;
     margin: 25px;
+    overflow: auto;
+}
+
+.CommentsDisplay {
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+}
+li {
+    margin: 8px;
+}
+.date {
+    font-size: 12px;
 }

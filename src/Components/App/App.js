@@ -9,6 +9,7 @@ import './App.css'
 import NotFoundPage from '../../Routes/NotFoundPage/NotFoundPage';
 import RegistationPage from '../../Routes/RegistrationPage/RegistrationPage';
 import CommentSection from '../CommentSection/CommentSection'
+import Footer from '../Footer/Footer'
 
 export default class App extends React.Component {
 
@@ -18,15 +19,18 @@ export default class App extends React.Component {
         <SkaterListProvider>
           <main className='App'>
             <Nav />
-            <Switch>
+            <section className='body'>
+             <Switch>
               <Route exact path='/' component={MainPage} />
               <Route path='/log-in' render={(props) => <LoginPage {...props} onLoginSuccess={this.handleLoginSuccess} />} />
               <Route path='/register' component={RegistationPage} />
               <Route path='/new-card' render={(props) => <NewCardPage {...props} add={this.addSkater}/>} />
               <Route path='/comments/:skaterId' component={CommentSection} />
               <Route component={NotFoundPage} />
-            </Switch>
+             </Switch>
+            </section>
           </main>
+          <Footer />
         </SkaterListProvider>
       </Router>
     );
