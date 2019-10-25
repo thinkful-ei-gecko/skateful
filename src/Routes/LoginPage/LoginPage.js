@@ -52,7 +52,7 @@ export default class LoginPage extends React.Component {
         </p>
         <p className='demo'>
           For demo purposes, you can login using these credentials:
-          'admin': 'password' *admin has special privelages* 
+          'admin': 'password' *admin has special privelages* <br />
           'badri': 'password'
         </p>
       </fieldset>
