@@ -1,3 +1,25 @@
+Hello! Welcome to Skateful, by badri narayan
+live link: https://skateful.badri-narayan.now.sh
+
+this app was made for my first capstone project at Thinkful.
+
+The goal for this app is to upload custom skater profiles and compete to see which skater gets the most up-votes.
+Users can also comment on each skater, and have discussion if they'd like!
+
+You can register for a new account, or you can log-in to the admin profile using the credentials: 'admin', 'password'
+or to see how regular accounts work, you can create your own or log in using 'badri', 'password'
+
+![Image of Skateful]
+(https://i.ibb.co/mRH24GX/Screen-Shot-2019-10-25-at-7-05-40-AM.png)
+
+
+
+
+
+
+
+The following is from 'create-react-app':
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
