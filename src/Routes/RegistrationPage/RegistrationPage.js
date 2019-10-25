@@ -19,8 +19,8 @@ export default class RegistationPage extends React.Component {
         this.refs.user_name.value = ''
         this.refs.password.value = ''
         this.refs.email.value = ''
-        this.context.renderLogIn()
         this.context.updateLoginError(null)
+        this.context.renderLogIn()
       })
       .catch(err => this.context.updateLoginError(err))
   }

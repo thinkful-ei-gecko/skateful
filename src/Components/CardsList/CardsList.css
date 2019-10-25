@@ -1,3 +1,11 @@
+.CardsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
 .CardsDisplay {
     display: flex;
     flex-direction: row;

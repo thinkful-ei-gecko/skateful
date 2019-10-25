@@ -40,14 +40,14 @@ export default class NewCardPage extends React.Component {
             <input name='location' ref='location' type='text' required />
               <br />
           <label htmlFor='instagram'> instagram? </label>
-            <input name='instagram' ref='instagram' type='text' placeholder='@someone' />
+            <input name='instagram' ref='instagram' type='text' placeholder='instagram handle w/o @' />
               <br />
           <label htmlFor='img_url'> image url: </label>
-            <input name='img_url' ref='img_url' type='text' />
+            <input name='img_url'  placeholder='optional' ref='img_url' type='text' />
               <br />
           <label htmlFor='bio'> bio: </label>
             <br />
-          <textarea name='bio' ref='bio' type='text' />
+          <textarea name='bio' ref='bio' type='text' placeholder='optional' />
             <br />
           <input className ='submit' type='submit' />
         </form>

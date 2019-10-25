@@ -17,16 +17,18 @@ export default class CardsList extends React.Component {
     return (
       <SkatersContext.Consumer>
         {context => (
+        <>
+          <h3>Skaters</h3>
           <div className='CardsList'>
-            <h3>Skaters</h3>
             {!context.skaters.length ? <div>No Skaters</div> : (
               <div className='CardsDisplay'>
                 {context.skaters.map((skater, i) => 
                   <Card skater={skater} key={i} />)}
-                <NewCard />
               </div>
             )}
+            <NewCard />
           </div>
+        </>
         )}
       </SkatersContext.Consumer>
     )

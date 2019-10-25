@@ -50,6 +50,11 @@ export default class LoginPage extends React.Component {
           Don't have an account? Register for one 
           <Link to='/register'> here </Link> 
         </p>
+        <p className='demo'>
+          For demo purposes, you can login using these credentials:
+          'admin': 'password' *admin has special privelages* 
+          'badri': 'password'
+        </p>
       </fieldset>
     )
   }
