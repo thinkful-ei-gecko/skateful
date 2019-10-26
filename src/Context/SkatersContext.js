@@ -87,7 +87,6 @@ class SkaterListProvide extends React.Component {
     }
 
     updateLoginError = (errorMessage) => {
-      console.log(errorMessage)
         this.setState({
             log_in_error: errorMessage
         })

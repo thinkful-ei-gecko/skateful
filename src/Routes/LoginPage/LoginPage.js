@@ -33,11 +33,9 @@ export default class LoginPage extends React.Component {
   }
 
   render() {
-    console.log(this.context.user)
     return(
       <fieldset className='LoginPage'>
         <h1>Log In</h1>
-        {/* <img src='logo512.png' alt='logo' style={{width: '80px', height: '80px'}}/> */}
         <p className='error'>{ this.context.log_in_error && <span>Username or password is not valid</span> }</p>
         <form onSubmit={this.handleSubmitJwtAuth}>
 					<label htmlFor='user_name'>username: </label>
