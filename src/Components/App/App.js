@@ -12,7 +12,6 @@ import CommentSection from '../CommentSection/CommentSection'
 import Footer from '../Footer/Footer'
 
 export default class App extends React.Component {
-
   render() {
     return (
       <Router>

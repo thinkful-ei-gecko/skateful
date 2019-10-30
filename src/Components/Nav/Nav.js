@@ -8,7 +8,7 @@ import logo from '../../logo128.png'
 
 export default class Nav extends React.Component {
   static contextType = SkaterContext;
-
+  
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
     this.context.updateUser(null)
@@ -50,7 +50,7 @@ export default class Nav extends React.Component {
             <Link to='/' className='Skateful'> <img id='logo' src={logo} alt='Skateful' style={{width: '40px', height: '40px'}}/> <p> Skateful </p> </Link>
             <Link to='/' className='Slogan'> find and share the best skaters </Link>
             <p>
-              {this.context.logged_in 
+              {TokenService.hasAuthToken() 
                 ? this.renderLogoutLink()
                 : this.renderLoginLink()}
             </p>
