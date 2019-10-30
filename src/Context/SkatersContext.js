@@ -39,7 +39,6 @@ class SkaterListProvide extends React.Component {
     }
 
     addUpVote = (skaterId, newUpvoteCount) => {
-      console.log(this.state.skaters.map(skater => skater.up_votes))
       SkatersService.addVote(skaterId, newUpvoteCount)
     }
 
@@ -68,7 +67,6 @@ class SkaterListProvide extends React.Component {
     }
 
     deleteComment = (skaterId, commentId) => {
-      console.log(commentId)
       SkatersService.deleteComment(skaterId, commentId)
         .then(() => {
           let newComments = [...this.state.comments]

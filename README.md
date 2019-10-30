@@ -1,68 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello! Welcome to Skateful, by badri narayan
 
-## Available Scripts
+live link: https://skateful.badri-narayan.now.sh
 
-In the project directory, you can run:
+this app was made for my first capstone project at Thinkful.
 
-### `npm start`
+The goal for this app is to upload custom skater profiles and compete to see which skater gets the most up-votes.
+Users can also comment on each skater, and have discussion if they'd like!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can register for a new account, or you can log-in to the admin profile using the credentials: 'admin', 'password'
+or to see how regular accounts work, you can create your own or log in using 'badri', 'password'
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Image of Skateful](https://i.ibb.co/mRH24GX/Screen-Shot-2019-10-25-at-7-05-40-AM.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The components can be re-used for other purposes as well, simply re-name the fields accordingly.
+The Card component iterates through the CardsList component, ie the Cards are in the CardsList
+The NewCard Component Creates a new Card.
 
-### `npm run build`
+All of the Components are organized as best as I could, separated in different folders, each containing their appropriate .css files. Some general CSS (CSS that doesn't  carries over the other components. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tech Stack: PERN, Testing: Chai, Jest, Mocha
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

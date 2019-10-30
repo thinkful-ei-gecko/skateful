@@ -5,6 +5,7 @@ import TokenService from '../../Services/token-service'
 import SkaterContext from '../../Context/SkatersContext'
 import logo from '../../logo128.png'
 
+
 export default class Nav extends React.Component {
   static contextType = SkaterContext;
 
