@@ -1,6 +1,7 @@
 Hello! Welcome to Skateful, by badri narayan
 
 live link: https://skateful.badri-narayan.now.sh
+backend: https://github.com/thinkful-ei-gecko/skateful-api
 
 this app was made for my first capstone project at Thinkful.
 
