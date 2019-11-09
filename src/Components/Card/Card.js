@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css'
 import SkatersContext from '../../Context/SkatersContext';
+import TokenService from '../../Services/token-service'
 
 export default class Card extends React.Component {
   static contextType = SkatersContext
@@ -15,16 +16,23 @@ export default class Card extends React.Component {
   }
   
   handleUpVoteClick = () => {
-    if (!this.context.logged_in){
+    if (!TokenService.hasAuthToken()){
       this.context.renderLogIn()
       window.alert('Must be logged in!')
     }
-    else if (this.context.logged_in){
+    else if (TokenService.hasAuthToken()){
       this.setState({
         up_votes: this.state.up_votes + 1
       }, () => {
         this.context.addUpVote(this.props.skater.id, this.state.up_votes)
       })     
+    }
+  }
+
+  confirmDelete = () => {
+    let r = window.confirm(`Are you sure you want to delete this skater?`)
+    if (r === true) {
+      this.handleDeleteButtonClicked()
     }
   }
 
@@ -39,7 +47,7 @@ export default class Card extends React.Component {
             <div className='inner'>
                 <div className='back'>
                     {this.context.user === 'admin' &&
-                      <button onClick={() => this.handleDeleteButtonClicked()} className='delete'>
+                      <button onClick={() => this.confirmDelete()} className='delete'>
                         <div className='front-x'>
                           <img src='error.svg' alt='x'/>
                         </div>
@@ -53,11 +61,8 @@ export default class Card extends React.Component {
                     <p> <a href={`http://www.instagram.com/${skater.instagram}`} target='blank'> @{skater.instagram} </a> </p>
                     <p> {this.state.up_votes} up-votes </p>
                     <button onClick={() => this.handleUpVoteClick()} className='Upvote'> up-vote </button><br />
-                    <Link to={{ pathname: `/comments/${skater.id}`,
-                                state: {
-                                    skater: {skater}
-                                }
-                            }} className='view-comments'> view comments </Link>
+                    <Link to={{ pathname: `/comments/${skater.id}`}}
+                                 className='view-comments'> view comments </Link>
                 </div>
                 <div className='front'>
                     <img className='skater-img' src={skater.img_url} alt={skater.name} style={{height: '200px', width: 'auto'}}/>

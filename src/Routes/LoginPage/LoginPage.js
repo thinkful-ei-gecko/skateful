@@ -21,7 +21,7 @@ export default class LoginPage extends React.Component {
        password: password.value,
      })
        .then(res => {
-         this.context.updateUser(user_name.value)
+         window.localStorage.setItem('user', user_name.value)
          user_name.value = ''
          password.value = ''
          TokenService.saveAuthToken(res.authToken)

@@ -1,12 +1,13 @@
 import React from 'react';
 import './NewCard.css';
 import SkatersContext from '../../Context/SkatersContext'
+import TokenService from '../../Services/token-service'
 
 export default class NewCard extends React.Component {
   static contextType = SkatersContext
-
+  
   handleAddCardButtonClick = () => {
-    this.context.logged_in 
+    TokenService.hasAuthToken() 
      ? this.context.renderAddNewCard()
      : this.context.renderLogIn()
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import './CommentSection.css'
 import SkatersContext from '../../Context/SkatersContext'
 import SkaterAPIService from '../../Services/skater-api-service';
+import TokenService from '../../Services/token-service';
 
 export default class CommentSection extends React.Component {
   static contextType = SkatersContext;
@@ -19,12 +20,12 @@ export default class CommentSection extends React.Component {
 
   handleCommentSubmit = (ev) => {
     ev.preventDefault()
-    if (!this.context.logged_in) {
+    if (!TokenService.hasAuthToken()) {
       this.context.updateLoginError('You must be logged in to post a comment!')
       this.context.renderLogIn()
       // needs to break here, so that the comment doesn't submit
     }
-    else if(this.context.logged_in) {
+    else if(TokenService.hasAuthToken()) {
       const { comment }= ev.target
       const skaterId = this.props.match.params.skaterId
 
@@ -81,7 +82,7 @@ export default class CommentSection extends React.Component {
                     <i className='date'>
                       {this.dater(comment.date_published)}
                     </i>
-                    {this.context.user === comment.user.user_name ? 
+                    {window.localStorage.getItem('user') === comment.user.user_name ? 
                     <>
                       <button onClick={() => this.setState({editCommentId: comment.id})}> edit </button>
                       <button onClick={() => this.handleDeleteCommentClicked(comment.id)}> delete </button>

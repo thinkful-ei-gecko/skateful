@@ -2,17 +2,18 @@ import React from 'react';
 import SkatersContext from '../../Context/SkatersContext'
 import './NewCardPage.css'
 import SkaterAPIService from '../../Services/skater-api-service'
+import TokenService from '../../Services/token-service'
 
 export default class NewCardPage extends React.Component {
   static contextType = SkatersContext;
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    if (!this.context.logged_in) {
+    if (!TokenService.hasAuthToken()) {
       this.context.renderLogIn()
       window.alert('Must be logged in!')
     }
-    else if (this.context.logged_in) {
+    else if (TokenService.hasAuthToken()) {
       const { name, location, instagram, bio, img_url } = ev.target
 
       SkaterAPIService.postSkater(name.value, location.value, instagram.value, bio.value, img_url.value)
